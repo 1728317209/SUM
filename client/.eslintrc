@@ -1,62 +1,41 @@
 {
-  "root": true,
-  "parser": "babel-eslint",
-  "extends": "eslint-config-airbnb",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
-  },
   "env": {
     "browser": true,
-    "mocha": true
+    "commonjs": true,
+    "es6": true
   },
-  "plugins": ["react", "babel"],
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "settings": {
+    "import/resolver": {
+       "webpack": {
+         "config": "webpack/dev.config.js"
+       }
+    }
+  },
+  "globals": {
+    "__DEV__": false,
+    "API_DOMAIN": false,
+    "GIT_HASH": false
+  },
   "rules": {
-    "react/prefer-stateless-function": 0,
-    "no-console": 0,
-    "no-use-before-define": 0,
-    "jsx-a11y/label-has-for": 0,
-    "jsx-a11y/anchor-has-content": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "react/no-array-index-key": 0,
-    "func-names": 0,
-    "arrow-body-style": 0,
-    "react/jsx-first-prop-new-line": 0,
-    "import/extensions": 0,
-    "import/no-unresolved": 0,
-    "prefer-destructuring": 0,
-    "no-param-reassign": 0,
-    "no-return-assign": 0,
-    "consistent-return": 0,
-    "no-redeclare": 0,
-    "react/require-extension": 0,
-    "react/no-danger": 0,
-    "comma-dangle": ["error", "always-multiline"],
-    "function-paren-newline": 0,
-    "object-curly-newline": 0,
-    "no-restricted-globals": 0,
-    "global-require": 0,
-    "linebreak-style": 0,
-    "camelcase": 0,
+    "linebreak-style": "off",
+    "camelcase": "off",
     "max-len": ["error", 150],
-    "class-methods-use-this": 0,
+    "class-methods-use-this": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "no-underscore-dangle": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/first": 0,
-    "react/sort-comp": 0,
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/first": "off",
+    "react/sort-comp": "off",
     "react/jsx-filename-extension": ["error", {
-      "extensions": [".js", ".jsx", "tsx"]
+      "extensions": [".tsx", ".js", ".jsx"]
     }],
-    "jsx-a11y/no-static-element-interactions": 0,
-    "jsx-a11y/no-noninteractive-element-interactions": 0,
-    "jsx-a11y/interactive-supports-focus": 0,
-    "react/forbid-prop-types": 0,
-    "react/prop-types": 0,
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "react/forbid-prop-types": "off",
+    "react/prop-types": "off",
     "react/jsx-no-undef": ["error", { "allowGlobals": true }]
   }
 }
