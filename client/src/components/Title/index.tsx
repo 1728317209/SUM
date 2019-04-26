@@ -4,12 +4,12 @@ export interface Props {
   name: string;
 }
 
-const Greeting = ({ name }: Props) => {
+const Title = ({ name }: Props) => {
   return (
     <div style={{ textAlign: 'center', fontSize: '40px', fontWeight: 'bold' }}>
-      Hello, {name}
+      {name}
     </div>
   );
 };
 
-export default Greeting;
+export default Title;

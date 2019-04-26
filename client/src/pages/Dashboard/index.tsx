@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Guide from '../../components/Guide';
-import Greeting from '../../components/Greeting';
+import Title from '../../components/Title';
 
 export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Greeting name="TypeScript" />
-        <Guide />
+        <Title name="Secure multiparty summation" />
       </div>
     );
   }
