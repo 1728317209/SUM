@@ -35,7 +35,9 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "eslint": "^5.16.0"
+  },
   "devDependencies": {},
   "title": "安全多方计算",
   "templateType": "koa2"
