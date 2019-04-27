@@ -36,6 +36,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@icedesign/label": "^1.0.2",
     "eslint": "^5.16.0"
   },
   "devDependencies": {},
