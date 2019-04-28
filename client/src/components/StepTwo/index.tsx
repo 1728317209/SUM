@@ -10,9 +10,9 @@ export default class StepTwo extends React.Component {
       ciphertext: '',
     };
   }
-  
+
   handleChange = (e) => {
-    console.log('e', e)
+    console.log('e', e);
   }
 
   handleEncrypt = (text) => {
@@ -22,13 +22,20 @@ export default class StepTwo extends React.Component {
   render() {
     const { ciphertext } = this.state;
     return (
-      <div key={1} className="container">
-        <div className="item">
-          <div>请输入自己的数据，并点击加密：</div>
-          <NumberPicker className="input" defaultValue={0} onChange={this.handleChange}/>
-          <Button type="primary" onClick={this.handleEncrypt} >加密&发送</Button>
-        </div>
-        <Input.TextArea className="item" placeholder={ciphertext || '密文...'} autoHeight={{ minRows: 3, maxRows: 5 }} />
+      <div className="step-two">
+        <Input
+          className="item"
+          placeholder="输入自己的隐私数据"
+          size="medium"
+          addonAfter={<Button type="primary" size="medium">加密</Button>}
+        />
+        <Input
+          className="item"
+          placeholder="点击加密得到的密文"
+          size="medium"
+          readOnly
+          addonAfter={<Button type="primary" size="medium">发送</Button>}
+        />
       </div>
     );
   }

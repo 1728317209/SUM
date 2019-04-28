@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "server": "nodemon src/app.js",
-    "lint": "eslint . --ext '.js,.jsx' --fix"
+    "lint": "eslint . --ext '.js,.jsx' --fix",
+    "eslint": "eslint src --ext .ts,.tsx"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.com",

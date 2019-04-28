@@ -1,55 +1,49 @@
 import React from 'react';
-import { Button, Progress } from '@alifd/next';
+import { Button } from '@alifd/next';
 import './index.scss';
 
-const HOW_LONG = 3000;
-
-export default class StepOne extends React.Component {
+export default class StepOne extends React.Component <{
+  onStepChange: Function
+}, {
+  isReady: Boolean,
+  readyNum: any,
+  unReadyNum: any,
+}> {
   constructor(props) {
     super(props);
     this.state = {
-			t: HOW_LONG,
-      ready: false,
+      isReady: false,
+      readyNum: 1,
+      unReadyNum: 3,
     };
-	}
-	
-	componentDidMount() {
-		setInterval(() => {
-			const { t, ready } = this.state;
-			if (t <= 0) {
-				clearInterval()
-				if (ready) {
-					this.props.onStepChange(1);
-				}
-			} else {
-				console.log('t - 1000', t - 1000)
-				this.setState({
-					t: t - 1000
-				});
-			}
-		}, 1000, HOW_LONG);
-	}
+  }
 
-	handleReady() {
-		this.setState({
-			ready: true
-		});
-	}
+  handleReady() {
+    this.setState({
+      isReady: true,
+      readyNum: this.state.readyNum + 1,
+    });
+    this.props.onStepChange(1);
+  }
 
-	render() {
-		const { ready, t } = this.state;
-		console.log('t', t, t / HOW_LONG)
-		return (
-			<div key={0} className="smc-step">
-				<div className="ready">
-					<div>如果准备就绪，请点击【就绪】按钮 </div>
-					<Button type="primary" disabled={ready || t <= 0} size="large" onClick={() => this.handleReady()}>就绪</Button>
-				</div>
-				<div>
-					<div>倒计时：</div>
-					<Progress percent={t / HOW_LONG * 100} shape="circle" size="small" />
-				</div>
-			</div>
-		);
-	}
+  render = () => {
+    console.log('this.state', this, this.state);
+    const { isReady, readyNum, unReadyNum } = this.state;
+    return (
+      <div key={0} className="step-one">
+        <div className="item">
+          <span>如果准备就绪，请点击:</span>
+          <Button type="primary" disabled={!!isReady} onClick={() => this.handleReady()}>就绪</Button>
+        </div>
+        <div className="item">
+          <div>当前就绪人数 / 总人数:</div>
+          {
+            readyNum && unReadyNum
+              ? <Button type="primary">{`${readyNum} / ${unReadyNum}`}</Button>
+              : <Button type="primary">······</Button>
+          }
+        </div>
+      </div>
+    );
+  }
 }

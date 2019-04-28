@@ -3,7 +3,6 @@ import { Loading, Input, Button } from '@alifd/next';
 import './index.scss';
 
 export default class StepThree extends React.Component {
-
   handleDecrypt = (encryptedSum) => {
 
   }
@@ -18,7 +17,7 @@ export default class StepThree extends React.Component {
         </div>
       );
     }
-    return <Loading style={{width: "300px"}} tip="正在计算..." />;
+    return <Loading style={{ width: '300px' }} tip="正在计算..." />;
   }
 
   renderUnSponsor = () => {
@@ -28,15 +27,14 @@ export default class StepThree extends React.Component {
         <Input addonTextBefore="最终结果" />
       );
     }
-    return <Loading style={{width: "300px"}} tip="正在计算..." />;
+    return <Loading style={{ width: '300px' }} tip="正在计算..." />;
   }
 
   render() {
     const { isSponsor } = this.props;
     if (isSponsor) {
       return this.renderSponsor();
-    } else {
-      return this.renderUnSponsor();
     }
+    return this.renderUnSponsor();
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, Step  } from '@alifd/next';
+import { Slider, Step } from '@alifd/next';
 import StepOne from '../StepOne';
 import StepTwo from '../StepTwo';
 import StepThree from '../StepThree';
@@ -15,7 +15,7 @@ export default class SmcStep extends React.Component {
       isSponsor: false,
       encryptedSum: null,
       decryptedSum: null,
-    }
+    };
   }
 
   handleIsSponsor = (isSponsor) => {
@@ -35,11 +35,13 @@ export default class SmcStep extends React.Component {
   }
 
   renderStep = (step) => {
-    
+
   }
 
   render() {
-    const { step, isSponsor, encryptedSum, decryptedSum } = this.state;
+    const {
+      step, isSponsor, encryptedSum, decryptedSum,
+    } = this.state;
     return (
       <div className="smc">
         <Slider activeIndex={step} arrows={false} dots={false}>

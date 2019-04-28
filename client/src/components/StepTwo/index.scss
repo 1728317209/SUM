@@ -1,16 +1,5 @@
-.container {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
+.step-two {
 	.item {
-		width: 30%;
-		margin: 0;
-		.input {
-			width: 100%;
-		}
-	}
-	.encrypt {
-		display: flex;
+		margin: 10px;
 	}
 }

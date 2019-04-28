@@ -37,7 +37,8 @@
   "scripts": {
     "start": "ice dev --project-type=nodejs",
     "build": "ice build --project-type=nodejs",
-    "lint": "eslint . --ext '.js,.jsx,.tsx' --fix"
+    "lint": "eslint . --ext '.js,.jsx,.tsx' --fix",
+    "eslint": "eslint src --ext .ts,.tsx"
   },
   "publishConfig": {
     "access": "public"

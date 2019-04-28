@@ -1,8 +1,16 @@
-.smc-step {
+.step-one {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	width: 100%;
 	height: 300px;
-	background: #F3F3F3;
+	.item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		Button {
+			min-width: 60px;
+			margin-left: 20px;
+		}
+	}
 }

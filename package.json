@@ -13,7 +13,8 @@
     "build": "cd client && npm run build",
     "clinetLint": "cd client && npm run lint",
     "serverLint": "cd server && npm run lint",
-    "lint": "npm run clinetLint && npm run serverLint"
+    "lint": "npm run clinetLint && npm run serverLint",
+    "eslint": "eslint src --ext .ts,.tsx"
   },
   "keywords": [
     "ice",
@@ -39,7 +40,9 @@
     "@icedesign/label": "^1.0.2",
     "eslint": "^5.16.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-plugin-react": "^7.12.4"
+  },
   "title": "安全多方计算",
   "templateType": "koa2"
 }
